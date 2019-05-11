@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Agregar Gasto</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <!-- barra superior -->
+        <nav>
+            <div id="menu"><a href="#"> <i class="fas fa-bars"></i></a></div>
+            <div id="titulo">
+                <h1>Agregar gasto</h1>
+            </div>
+        </nav>
+
+        <!-- contenido editable -->
+        <div class="content">
+            <!-- <div class="relleno">
+                <h2>Importe</h2>
+            </div> -->
+            <div id="tipoImporte">
+                <form class="gastoAdicional" action="">
+                    <label for="importeGastado">Importe</label>
+                    <input type="number" id="importeGastado" name="importeGastado" placeholder="Ingresa el importe"
+                        required>
+                    <!-- <h2>Elige la categoría</h2> -->
+                    <label for="tipoGasto">Elige la categoría</label>
+                    <input type="radio" name="tipoGasto" id="Supervivencia" required>
+                    <label class="categoria" for="Supervivencia"> Supervivencia </label><span
+                        class="inter expSuper">?</span>
+                    <input type="radio" name="tipoGasto" id="Ocio">
+                    <label class="categoria" for="Ocio">Ocio y vicio</label><span class="inter expOcio">?</span>
+                    <input type="radio" name="tipoGasto" id="Cultura">
+                    <label class="categoria" for="Cultura">Cultura</label><span class="inter expSuperCultura">?</span>
+                    <input type="radio" name="tipoGasto" id="Extras">
+                    <label class="categoria" for="Extras">Extras</label><span class="inter expExtra">?</span>
+                    <input type="submit" class="button" value="Listo">
+                    <input type="button" value="Volver" class="button volver">
+                </form>
+                <div class="explicacion">
+                    <p id="explicacion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione amet aliquid at. Dolorem
+                        molestiae inventore voluptates dolores natus maiores deleniti, impedit similique! Recusandae id
+                        temporibus accusamus impedit aperiam porro. Debitis?</p>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- panel lateral -->
+        <div id="panel">
+            <div id="cerrarPanel"><i class="fas fa-times cerrar"></i></div>
+            <div id="perfil"><button>Perfil</button></div>
+            <div id="notas"><button>Notas</button></div>
+            <div id="configuracion"><button> Configuración</button></div>
+            <div id="reiniciar"><button>Reiniciar Ciclo</button></div>
+            <div id="salir"><button> Salir</button></div>
+        </div>
+        <!-- SCRIPTS -->
+
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script src="../js/funcionesBasicas.js"></script>
+
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+
+        <!-- Add additional services that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
+
+        <script src="../js/app3prueba.js"></script>
+</body>
+
+</html>

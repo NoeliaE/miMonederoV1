@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Blank App</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <!-- barra superior -->
+        <nav>
+            <div id="menu"><a href="#"> <i class="fas fa-bars"></i></a></div>
+            <div id="titulo">
+                <h1>Mi App</h1>
+            </div>
+        </nav>
+
+        <!-- contenido editable -->
+        <div class="content">
+            <form id="primerIngreso" action="" >
+                <h2>Presupuesto</h2>
+                <select name="moneda" id="moneda">
+                    <option value="ARS">AR$</option>
+                    <option value="USS" disabled>US$</option>
+                    <option value="otro" disabled>Otro</option>
+                </select>
+                <input type="number" id="presupuestoInicial" placeholder=" Tu dinero total" required>
+                <h2>Meta</h2>
+                <input type="number" id="meta" placeholder=" Cuánto desearías ahorrar" required>
+                <h2>Ciclo</h2>
+                <select name="ciclo" id="ciclo">
+                    <option value="Semanal" disabled>Semanal</option>
+                    <option value="Quincenal" disabled>Quincenal</option>
+                    <option value="Mensual" selected>Mensual</option>
+                </select>
+                <h2>Objetivo</h2>
+                <textarea name="objetivo" id="miObjetivo" cols="30" rows="10"
+                    placeholder="Tus motivaciones personales. Ej: 'Adquirir un nuevo teléfono'. Puede ser más de una "></textarea>
+                <input type="submit" class="button" value="¡Comencemos!">
+            </form>
+
+
+        </div>
+
+        <!-- panel lateral -->
+        <div id="panel">
+            <div id="cerrarPanel"><button><i class="fas fa-times cerrar"></i></button></div>
+            <div id="perfil"><button>Perfil</button></div>
+            <div id="notas"><button>Notas</button></div>
+            <div id="configuracion"><button> Configuración</button></div>
+            <div id="reiniciar"><button>Reiniciar Ciclo</button></div>
+            <div id="salir"><button> Salir</button></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script src="../js/funcionesBasicas.js"></script>
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
+
+    <script src="../js/app.js"></script>
+    
+</body>
+
+</html>

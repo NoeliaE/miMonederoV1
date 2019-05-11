@@ -1,0 +1,21 @@
+-Verificar interacciones con botones. Active, tap
+
+
+/*GRILLA
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 3rem 90% auto;
+/*POSICION
+    grid-column: 1/11;
+    grid-row: 1/2;
+
+
+/
+collection 
+
+
+//CATEGORIAS
+SUPERVIVENCIA
+OCIO Y VICIO
+CULTURA 
+EXTRAS
+Agregar gastos fijos?

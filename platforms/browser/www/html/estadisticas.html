@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Mi monedero: Estadísticas</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <!-- barra superior -->
+        <nav>
+            <div id="menu"><a href="#"> <i class="fas fa-bars"></i></a></div>
+            <div id="titulo">
+                <h1>Estadísticas</h1>
+            </div>
+        </nav>
+
+        <!-- contenido editable -->
+        <div class="content">
+            <div class="seccionEstadisticas">
+                <p>Total gastado en supervivencia: AR$ <span class="superv"></span></p>
+                <p>Total gastado en ocio y vicio: AR$ <span class="ocioyv"></span></p>
+                <p>Total gastado en cultura: AR$ <span class="cultura"></span></p>
+                <p>Total gastado en extras: AR$ <span class="extras"></span></p>
+                <p>Dinero disponible para llegar a la meta: AR$ <span></span></p>
+            </div>
+            <button class="button volver">Volver</button>
+            
+
+            
+        </div>
+
+
+        <!-- panel lateral -->
+        <div id="panel">
+            <div id="cerrarPanel"><i class="fas fa-times cerrar"></i></div>
+            <div id="perfil"><button>Perfil</button></div>
+            <div id="notas"><button>Notas</button></div>
+            <div id="configuracion"><button> Configuración</button></div>
+            <div id="reiniciar"><button>Reiniciar Ciclo</button></div>
+            <div id="salir"><button> Salir</button></div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script src="../js/funcionesBasicas.js"></script>
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
+
+<script src="../js/estadisticas.js"></script>
+</body>
+
+</html>
