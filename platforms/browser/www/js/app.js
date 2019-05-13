@@ -1,4 +1,4 @@
-var config = {
+/*var config = {
   apiKey: "AIzaSyCcVgNXK-eclIBU-gheCZfWx6CQJBTRP8M",
   authDomain: "app-noe-a11b2.firebaseapp.com",
   databaseURL: "https://app-noe-a11b2.firebaseio.com",
@@ -8,7 +8,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var db = firebase.firestore();
+var db = firebase.firestore();*/
 
 //const docRef = firestore.collection("nombreColeccion").doc("NombreDoc");
 

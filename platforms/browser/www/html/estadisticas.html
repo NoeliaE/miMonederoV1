@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>Mi monedero: Estadísticas</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport"
+            content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+        <meta http-equiv="Content-Security-Policy"
+            content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+        <!-- Good default declaration:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+            * Enable eval(): add 'unsafe-eval' to default-src
+        * Create your own at http://cspisawesome.com
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    
+        
+        <title>Mi monedero</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    </head>
 
 <body>
     <div class="container">
@@ -23,20 +43,24 @@
         <!-- contenido editable -->
         <div class="content">
             <div class="seccionEstadisticas">
-                <p>Total gastado en supervivencia: AR$ <span class="superv"></span></p>
-                <p>Total gastado en ocio y vicio: AR$ <span class="ocioyv"></span></p>
-                <p>Total gastado en cultura: AR$ <span class="cultura"></span></p>
-                <p>Total gastado en extras: AR$ <span class="extras"></span></p>
-                <p>Dinero disponible para llegar a la meta: AR$ <span></span></p>
+                <h2>Gastos</h2>
+                <p>Supervivencia: AR$ <span class="superv"></span></p>
+                <p>Ocio y vicio: AR$ <span class="ocioyv"></span></p>
+                <p>Cultura: AR$ <span class="cultura"></span></p>
+                <p>Extras: AR$ <span class="extras"></span></p>
+                <p class="miTotal">Total: AR$ <span class="gastoTotal"></span> </p>
+                <p>Dinero disponible para <span class="miObjetivo">llegar a la meta</span>: </br> AR$<span
+                        class="miDisponible"></span></p>
             </div>
             <button class="button volver">Volver</button>
-            
 
-            
+
+
         </div>
 
 
         <!-- panel lateral -->
+        <div class="sombra"></div>
         <div id="panel">
             <div id="cerrarPanel"><i class="fas fa-times cerrar"></i></div>
             <div id="perfil"><button>Perfil</button></div>
@@ -45,11 +69,19 @@
             <div id="reiniciar"><button>Reiniciar Ciclo</button></div>
             <div id="salir"><button> Salir</button></div>
         </div>
+        <div id="alerta">
+                <div class="contAlerta">
+                    <p class="alerta">¡Si reinicias el ciclo se perderá todo el progreso!
+                    </p>
+                    <button class="button reinicioOK">Reiniciar</button>
+                    <button class="button reinicioNO">Cancelar</button>
+                </div>
+            </div>
     </div>
 
     <!-- SCRIPTS -->
     <script type="text/javascript" src="../cordova.js"></script>
-    <script src="../js/funcionesBasicas.js"></script>
+
 
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
@@ -61,7 +93,9 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
 
-<script src="../js/estadisticas.js"></script>
+    <script src="../js/funcionesBasicas.js"></script>
+
+    <script src="../js/estadisticas.js"></script>
 </body>
 
 </html>

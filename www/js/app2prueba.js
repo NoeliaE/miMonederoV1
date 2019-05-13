@@ -1,4 +1,4 @@
-var config = {
+/*var config = {
     apiKey: "AIzaSyCcVgNXK-eclIBU-gheCZfWx6CQJBTRP8M",
     authDomain: "app-noe-a11b2.firebaseapp.com",
     databaseURL: "https://app-noe-a11b2.firebaseio.com",
@@ -7,7 +7,7 @@ var config = {
     messagingSenderId: "1034446476934"
 };
 firebase.initializeApp(config);
-var db = firebase.firestore();
+var db = firebase.firestore();*/
 
 var misDatos = db.doc("datos/miPresupuesto");
 
@@ -57,15 +57,19 @@ actualizarDatos = function () {
         var cambiarAltura = _porcentajeGastado + "%"
         function cambioAltura() {
             document.querySelector(".progreso").style.height = cambiarAltura;
-            if (_porcentajeGastado >= 60) {
-                document.querySelector(".progreso").style.backgroundColor = "green";
+            if (_porcentajeGastado >= 75) {
+                document.querySelector(".progreso").style.backgroundColor = "#095c15"; //verde
+            } else if (_porcentajeGastado >= 55) {
+                document.querySelector(".progreso").style.backgroundColor = "#507715"; //verdish
+            } else if (_porcentajeGastado >= 45) {
+                document.querySelector(".progreso").style.backgroundColor = "#ffb815"; //amarillo
             } else if (_porcentajeGastado >= 25) {
-                document.querySelector(".progreso").style.backgroundColor = "yellow";
+                document.querySelector(".progreso").style.backgroundColor = "#f45e0e"; //rojish
             } else if (_porcentajeGastado >= 0) {
-                document.querySelector(".progreso").style.backgroundColor = "red";
+                document.querySelector(".progreso").style.backgroundColor = "#e90006";
             } else if (_porcentajeGastado < 0) {
                 document.querySelector(".progreso").style.height = "100%";
-                document.querySelector(".progreso").style.backgroundColor = "red";
+                document.querySelector(".progreso").style.backgroundColor = "#e90006";
             }
         }
 
@@ -89,9 +93,10 @@ actualizarDatos = function () {
         if (doc && doc.exists) {
             //console.log(doc.data());
             //console.log(doc.data().ingresoTotal);
-            document.querySelector(".plataDisponible").innerHTML = _disponibleActual;
+            // document.querySelector(".plataDisponible").innerHTML = _disponibleActual;
             document.querySelector(".miMeta").innerHTML = doc.data().meta;
             document.querySelector(".plataTotal").innerHTML = _disponibleActual2;
+            document.querySelector(".miGastoTotal").innerHTML = _gastos;
             document.querySelector("#dias").innerHTML = diasRestantes;
         } else {
             console.log("keep tryin'");
@@ -115,8 +120,6 @@ document.querySelector(".nuevoIngreso").addEventListener("submit", nuevoIngreso)
         _ingresoTotal = doc.data().ingresoTotal * 1;
         return _ingresoTotal;
     });
-
-    
 }*/
 
 // var _ingresoTotal = 0;
@@ -168,7 +171,7 @@ document.querySelector("#cancelar").addEventListener("click", function () {
     document.querySelector("#nuevoIngreso").style.display = "none";
 });
 
-document.querySelector(".verEstadisticas").addEventListener("click",function(){
+document.querySelector(".verEstadisticas").addEventListener("click", function () {
     location.replace("estadisticas.html");
 })
 

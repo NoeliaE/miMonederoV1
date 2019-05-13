@@ -12,17 +12,58 @@ font-family: 'Open Sans', sans-serif; */
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     font-weight: 300;
+    color: #071739;
 }
 body{
     /* height: 100vh; */
 }
 
+/* PAGINA DE INICIO */
+.inicio{
+    height: 100vh;
+    width: 100vw;
+    background-color: #071739 !important;
+    color: #b9d5fd;
+}
+    .splash{
+        width: 100vw;
+        display: grid;
+        grid-gap: 0;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10,auto);
+        height: 100vh;
+        background-color: inherit;
+        color: inherit;
+    }
+    .miTitulo{
+        background-color: #071739;
+        color: #b9d5fd;
+        font-family: 'Roboto Slab', serif;
+        font-size: 1.5rem;
+        text-align: center;
+        grid-column: 2/10;
+        grid-row: 5/6;
+    }
+    .cargando{
+        background-color: inherit;
+        color: inherit;
+        grid-column: 2/10;
+        grid-row: 10/11;
+        text-align: center;
+        font-size: .7rem;
+    }
+
+
+
+/* CARACTERISTICAS GENERALES */
 h2{
     padding-top: 1rem;
     font-family: 'Open Sans', sans-serif;
 }
 .button{
     background-color: #b9d5fd;
+    height: 3rem;
+    font-family: 'Roboto Slab', serif;
 }
 
 .container{
@@ -78,7 +119,7 @@ nav{
 
 #panel{
     z-index: 20;
-    grid-column: 1/7;
+    grid-column: 1/9;
     /* grid-column: 0/0; */
     grid-row: 1/4;
     /* background-color: coral; */
@@ -90,9 +131,35 @@ nav{
     transition-duration: 10s;
     height: 100vh;
 }
+.sombra{
+    z-index: 19;
+    grid-row: 1/4;
+    grid-column: 1/11;
+    width: 100%;
+    height: 100%;
+    background-color: #000c;
+    display: none;
+}
 
-
-
+#alerta{
+    z-index: 22;
+    grid-column: 1/11;
+    grid-row: 1/4;
+    background-color: #000c;
+    /* display: grid; */
+    grid-template-columns: repeat(10, 1fr);
+    display: none;
+}
+    .contAlerta {
+        grid-column: 2/10;
+        height: auto;
+        margin: auto 0;
+        padding: .5rem;
+    }
+    .contAlerta p, .contAlerta button{
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+    }
 
 a, a:visited{
     color: azure;
@@ -122,7 +189,7 @@ button:active{
     margin-right: auto;
 }
 #cerrarPanel{
-    background-color: rgb(66, 65, 65);
+    /* background-color: rgb(66, 65, 65); */
     display: grid;
     grid-template-columns: repeat(4,1fr);
 }
@@ -245,18 +312,18 @@ select {
 }
 
 .progreso {
-    background-color: green;
+    background-color: #095c15;
     /* width: 90%; */
     /* height: 80%; */
     border-radius: 1rem;
 }
 
 .agregarGasto{
-    grid-column: 1/5;
+    grid-column: 1/9;
 }
 
 .agregarIngreso{
-    grid-column: 5/9;
+    grid-column: 1/9;
 }
 
 
@@ -266,25 +333,47 @@ select {
 
 #nuevoIngreso{
     /* margin-top: 1rem; */
+    /* display: grid;
+    grid-template-columns: repeat(10, 1fr); */
     z-index: 15;
-    background-color: rgba(0, 0, 0, 0.384);
+    background-color: #000c;
     grid-row: 1/4;
     grid-column: 1/11;
+    /* padding-top: 5rem;
+    padding-left: 3rem; */
     display: none;
-
-    padding-top: 5rem;
-    padding-left: 3rem;
 }
+    #displayIngreso{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    height: 100vh;
+    background-color: #ffffff00;
+    }
+
+    .nuevoIngreso {
+        grid-column: 2/10;
+        max-height: 50vh;
+        margin: auto 0;
+        padding: 1rem;
+    }
     #nuevoIngreso label, #nuevoIngreso input{
         width: 100%;
         grid-column: 1/9;
     }
 
-    .nuevoIngreso{
-        max-width: 75%;
-        padding: 1rem;
-    }
 
+    /* #enviarIngreso{
+        width: 70% !important;
+    }
+    #cancelar{
+        
+    } */
+    #enviarIngreso, #cancelar{
+        /* margin-top: 1rem; */
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        width: 100% !important;
+    }
 
 
 /*gastoAdicional*/
@@ -295,8 +384,9 @@ select {
 
 #tipoImporte label {
     grid-column: 1/8;
-    padding-top: 1rem;
-    padding-bottom: .5rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    margin-bottom: .2rem;
     /* text-align: center; */
 }
 #tipoImporte{
@@ -304,10 +394,17 @@ select {
 }
 #importeGastado{
     grid-column: 1/9;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    margin-bottom: 1rem;
 }
 
 input[type="radio"] {
     display:none;
+}
+
+.categoria{
+    text-align: center;
 }
 
 /* #tipoImporte label {
@@ -338,7 +435,8 @@ input[type="radio"] {
 
 
 #tipoImporte input[type="radio"]:checked+label {
-    background-color: #bbb;
+    background-color: #274684;
+    color: #b9d5fd;
     /* padding-left: 3rem; */
   }
 
@@ -346,6 +444,13 @@ input[type="radio"] {
     padding-left: 4rem;
     background-color: aliceblue;
 } */
+
+.volverGasto{
+    grid-column: 5/9;
+}
+.listGasto{
+    grid-column: 1/4;
+}
 
 .categoria{
     background-color: aliceblue;
@@ -361,4 +466,23 @@ input[type="radio"] {
 
 .seccionEstadisticas{
     grid-column: 1/9;
+}
+    .seccionEstadisticas p{
+        padding: .5rem;
+        margin: .2rem;
+        background-color: aliceblue;
+    }
+    .seccionEstadisticas p span{
+        background-color: inherit;
+        color: inherit;
+    }
+    .seccionEstadisticas .miTotal{
+        background-color: #274684;
+        color: #b9d5fd;
+        margin-bottom: 2rem;
+    }
+
+.volver{
+    grid-column: 1/9;
+    height: 3rem;
 }

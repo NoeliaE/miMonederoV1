@@ -1,4 +1,4 @@
-var config = {
+/*var config = {
     apiKey: "AIzaSyCcVgNXK-eclIBU-gheCZfWx6CQJBTRP8M",
     authDomain: "app-noe-a11b2.firebaseapp.com",
     databaseURL: "https://app-noe-a11b2.firebaseio.com",
@@ -7,7 +7,7 @@ var config = {
     messagingSenderId: "1034446476934"
 };
 firebase.initializeApp(config);
-var db = firebase.firestore();
+var db = firebase.firestore();*/
 //v rutas para los documentos respectivos 
 var misDatos = db.doc("datos/miPresupuesto");
 var misGastos = db.doc("datos/miPresupuesto/cuentaGastos/misGastos");
@@ -97,7 +97,7 @@ function agregarGasto(event) {
 
 }
 
-document.querySelector(".volver").addEventListener("click", function(){
+document.querySelector(".volverGasto").addEventListener("click", function(){
     location.replace("seguimientoPrincipal.html");
 })
 
